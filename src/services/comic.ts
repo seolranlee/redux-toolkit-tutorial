@@ -18,7 +18,7 @@ interface Artist {
   id: string;
 }
 
-interface ComicRankItem {
+export interface ComicRankItem {
   id: number;
   alias: string;
   title: string;
@@ -35,13 +35,13 @@ interface ComicRankItem {
   print: boolean;
 }
 
-interface ComicRankApiSuccessResponse {
+export interface ComicRankApiSuccessResponse {
   count: number;
   hasNext: boolean;
   data: ComicRankItem[];
 }
 
-interface ComicRankApiFailResponse {
+export interface ComicRankApiFailResponse {
   error: string;
 }
 
