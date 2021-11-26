@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useGetComicByPageQuery } from './services/comic';
 import Loader from './components/Loader.component';
+import useIntersect from './hooks/useIntersect.hoosk';
 
 export default function App() {
   const [page, setPage] = useState(1);
@@ -11,32 +12,26 @@ export default function App() {
   const [target, setTarget] = useState(null);
 
   const onIntersect = async ([entry], observer) => {
-    if (entry.isIntersecting && !isLoading) {
-      observer.unobserve(entry.target);
-      setTimeout(() => {
-        if (page < 5) setPage(page + 1);
-      }, 1000);
-      observer.observe(entry.target);
-    }
+    observer.unobserve(entry.target);
+    setTimeout(() => {
+      if (page < 5) setPage(page + 1);
+    }, 1000);
+    observer.observe(entry.target);
   };
 
   useEffect(() => {
     if (data) setComics(comics.concat(data.data));
   }, [data]);
 
-  useEffect(() => {
-    let observer;
-    if (target && !isLoading) {
-      observer = new IntersectionObserver(onIntersect, {
-        threshold: 1,
-      });
-      observer.observe(target);
-    }
-    return () => observer && observer.disconnect();
-  }, [target, isLoading, page]);
+  useIntersect({
+    onIntersect,
+    target,
+    isLoading,
+    page,
+  });
 
-  // if (isLoading) return <div>Loading...</div>;
-  // if (!comics) return <div>Missing comic!</div>;
+  if (isLoading) return <div>Loading...</div>;
+  if (!comics) return <div>Missing comic!</div>;
 
   // Using a query hook automatically fetches data and returns query values
   // Individual hooks are also accessible under the generated endpoints:
