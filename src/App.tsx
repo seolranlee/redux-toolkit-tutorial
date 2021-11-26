@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { useGetTodoByNameQuery } from './services/todo';
+export default function App() {
+  const { data, error, isLoading } = useGetTodoByNameQuery('1');
 
-function App() {
+  if (isLoading) return <div>Loading...</div>;
+  if (!data) return <div>Missing todo!</div>;
+  // Using a query hook automatically fetches data and returns query values
+  // Individual hooks are also accessible under the generated endpoints:
+  // const { data, error, isLoading } = pokemonApi.endpoints.getPokemonByName.useQuery('bulbasaur')
+
+  // render UI based on data and loading state
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>TODO list</h1>
+      <p>{data.userId}</p>
+      <p>{data.id}</p>
+      <p>{data.title}</p>
+      <p>{data.completed ? '완료' : '미완료'}</p>
     </div>
   );
 }
-
-export default App;
