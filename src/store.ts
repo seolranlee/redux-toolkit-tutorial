@@ -1,17 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit';
 // Or from '@reduxjs/toolkit/query/react'
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
-import { todoApi } from './services/todo';
+// import { todoApi } from './services/todo';
+import { comicApi } from './services/comic';
 
 export const store = configureStore({
   reducer: {
     // Add the generated reducer as a specific top-level slice
-    [todoApi.reducerPath]: todoApi.reducer,
+    // [todoApi.reducerPath]: todoApi.reducer,
+    [comicApi.reducerPath]: comicApi.reducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.
   middleware: getDefaultMiddleware =>
-    getDefaultMiddleware().concat(todoApi.middleware),
+    getDefaultMiddleware().concat(comicApi.middleware),
 });
 
 // optional, but required for refetchOnFocus/refetchOnReconnect behaviors
