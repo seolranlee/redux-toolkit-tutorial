@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useGetComicByPageQuery } from './services/comic';
 import Loader from './components/Loader.component';
 import useIntersect from './hooks/useIntersect.hoosk';
+import Counter from './components/Counter.component';
 
 export default function App() {
   const [page, setPage] = useState(1);
@@ -51,6 +52,7 @@ export default function App() {
           {isLoading && <Loader />}
         </div>
       </>
+      <Counter />
     </div>
   );
 }
