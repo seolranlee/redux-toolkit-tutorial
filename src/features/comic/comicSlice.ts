@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { stat } from 'fs';
 import type { RootState } from '../../store';
 
 // Define a type for the slice state
@@ -17,7 +16,7 @@ export const comicSlice = createSlice({
   initialState,
   reducers: {
     increment: state => {
-      if (state.page < 5) state.page += 1;
+      state.page += 1;
     },
   },
 });

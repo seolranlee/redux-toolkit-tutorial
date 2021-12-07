@@ -46,20 +46,18 @@ const Ranking = (): ReactElement => {
 
   const [comics, setComics] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  const { data, error, isLoading } = useGetComicByPageQuery(page);
+  const { data, error, isLoading, isFetching } = useGetComicByPageQuery(page);
 
   // io
   const [target, setTarget] = useState(null);
 
   const getMoreItem = async () => {
-    setIsLoaded(true);
     await new Promise(resolve => setTimeout(resolve, 3000));
     dispatch(increment());
-    setIsLoaded(false);
   };
 
   const onIntersect = async ([entry], observer) => {
-    if (entry.isIntersecting && !isLoaded) {
+    if (entry.isIntersecting && !isFetching) {
       observer.unobserve(entry.target);
       await getMoreItem();
       observer.observe(entry.target);
@@ -91,9 +89,11 @@ const Ranking = (): ReactElement => {
         <section id="Ranking">
           <ComicItemList comics={comics} />
         </section>
-        <div ref={setTarget} className="Target-Element">
-          {isLoaded && <Loader />}
-        </div>
+        {page < 5 && (
+          <div ref={setTarget} className="Target-Element">
+            {!isFetching && <Loader />}
+          </div>
+        )}
       </AppWrap>
     </>
   );
