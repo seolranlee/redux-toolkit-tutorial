@@ -33,6 +33,7 @@ export interface ComicRankItem {
   previousRank: number;
   updatedAt: number;
   print: boolean;
+  thumbnailSrc: string;
 }
 
 export interface ComicRankApiSuccessResponse {

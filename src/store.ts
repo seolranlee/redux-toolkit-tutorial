@@ -4,6 +4,7 @@ import { setupListeners } from '@reduxjs/toolkit/dist/query';
 // import { todoApi } from './services/todo';
 import { comicApi } from './services/comic';
 import counterReducer from './features/couter/counterSlice';
+import comicReducer from './features/comic/comicSlice';
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     // [todoApi.reducerPath]: todoApi.reducer,
     [comicApi.reducerPath]: comicApi.reducer,
     counter: counterReducer,
+    comic: comicReducer,
   },
   // Adding the api middleware enables caching, invalidation, polling,
   // and other useful features of `rtk-query`.

@@ -5,6 +5,7 @@ const useIntersect = ({ onIntersect, target, isLoading, page }) => {
     let observer;
     if (target && !isLoading) {
       observer = new IntersectionObserver(onIntersect, {
+        root: target,
         threshold: 1,
       });
       observer.observe(target);

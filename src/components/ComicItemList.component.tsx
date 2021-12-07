@@ -1,16 +1,22 @@
-import React, { PropsWithChildren, useEffect, useState } from 'react';
+import React, { PropsWithChildren } from 'react';
 import { ComicRankItem } from '../services/comic';
 import ComicItem from './ComicItem.component';
 
 export interface ComicItemListProps {
-  comics: ComicRankItem;
+  comics: ComicRankItem[];
 }
 
 const ComicItemList = (props: PropsWithChildren<ComicItemListProps>) => {
+  const { comics } = props;
+
   return (
-    <>
-      <ComicItem />
-    </>
+    <ul className="lzComic__list">
+      <>
+        {comics.map(comic => (
+          <ComicItem key={comic.id} comic={comic} />
+        ))}
+      </>
+    </ul>
   );
 };
 
