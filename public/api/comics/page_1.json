@@ -6,9 +6,22 @@
       "id": 5310249108766720,
       "alias": "snail",
       "title": "아가씨와 우렁총각",
-      "artists": [{ "name": "제이드", "role": "writer", "id": "jade" }],
-      "schedule": { "periods": ["SAT"], "anchor": 0 },
-      "genres": ["romance"],
+      "artists": [
+        {
+          "name": "제이드",
+          "role": "writer",
+          "id": "jade"
+        }
+      ],
+      "schedule": {
+        "periods": [
+          "SAT"
+        ],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 6,
       "contentsState": "completed",
       "isPrint": false,
@@ -23,13 +36,34 @@
       "alias": "ceos_crooked_love",
       "title": "대표님의 삐뚤어진 사랑 [연재]",
       "artists": [
-        { "name": "Hongshu", "role": "scripter", "id": "hongshu" },
-        { "name": "Rose Studio", "role": "painter", "id": "rosestudio" },
-        { "name": "Nianhuarexiao", "role": "original", "id": "nianhuarexiao" },
-        { "name": "스토리숲", "role": "publisher", "id": "storySoop" }
+        {
+          "name": "Hongshu",
+          "role": "scripter",
+          "id": "hongshu"
+        },
+        {
+          "name": "Rose Studio",
+          "role": "painter",
+          "id": "rosestudio"
+        },
+        {
+          "name": "Nianhuarexiao",
+          "role": "original",
+          "id": "nianhuarexiao"
+        },
+        {
+          "name": "스토리숲",
+          "role": "publisher",
+          "id": "storySoop"
+        }
       ],
-      "schedule": { "periods": [], "anchor": 0 },
-      "genres": ["romance"],
+      "schedule": {
+        "periods": [],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 15,
       "contentsState": "scheduled",
       "isPrint": true,
@@ -43,9 +77,22 @@
       "id": 5849944865636352,
       "alias": "pencil",
       "title": "연필의 각도",
-      "artists": [{ "name": "홍자", "role": "writer", "id": "hongja" }],
-      "schedule": { "periods": ["FRI"], "anchor": 0 },
-      "genres": ["romance"],
+      "artists": [
+        {
+          "name": "홍자",
+          "role": "writer",
+          "id": "hongja"
+        }
+      ],
+      "schedule": {
+        "periods": [
+          "FRI"
+        ],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 14,
       "contentsState": "completed",
       "isPrint": false,
@@ -60,12 +107,29 @@
       "alias": "i_have_a_baby",
       "title": "아기가 생겼어요 [연재]",
       "artists": [
-        { "name": "강기", "role": "writer", "id": "kangki" },
-        { "name": "이정", "role": "original", "id": "leejung" },
-        { "name": "재담미디어", "role": "publisher", "id": "jaedam" }
+        {
+          "name": "강기",
+          "role": "writer",
+          "id": "kangki"
+        },
+        {
+          "name": "이정",
+          "role": "original",
+          "id": "leejung"
+        },
+        {
+          "name": "재담미디어",
+          "role": "publisher",
+          "id": "jaedam"
+        }
       ],
-      "schedule": { "periods": [], "anchor": 0 },
-      "genres": ["romance"],
+      "schedule": {
+        "periods": [],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 3,
       "contentsState": "scheduled",
       "isPrint": true,
@@ -80,15 +144,24 @@
       "alias": "bouquet",
       "title": "못난이에게 꽃다발을",
       "artists": [
-        { "name": "사쿠라 로쿠", "role": "writer", "id": "rokusakura" },
+        {
+          "name": "사쿠라 로쿠",
+          "role": "writer",
+          "id": "rokusakura"
+        },
         {
           "name": "서울미디어코믹스",
           "role": "publisher",
           "id": "seoulmediacomics"
         }
       ],
-      "schedule": { "periods": [], "anchor": 0 },
-      "genres": ["romance"],
+      "schedule": {
+        "periods": [],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 1,
       "contentsState": "scheduled",
       "isPrint": true,
@@ -103,13 +176,34 @@
       "alias": "sultans_flower_re",
       "title": "술탄의 꽃 [개정판]",
       "artists": [
-        { "name": "꽁", "role": "painter", "id": "ggong" },
-        { "name": "가하 웹툰", "role": "label", "id": "gahawebtoon" },
-        { "name": "춈춈", "role": "original", "id": "chyomchyom" },
-        { "name": "도서출판 가하", "role": "publisher", "id": "gahabooks" }
+        {
+          "name": "꽁",
+          "role": "painter",
+          "id": "ggong"
+        },
+        {
+          "name": "가하 웹툰",
+          "role": "label",
+          "id": "gahawebtoon"
+        },
+        {
+          "name": "춈춈",
+          "role": "original",
+          "id": "chyomchyom"
+        },
+        {
+          "name": "도서출판 가하",
+          "role": "publisher",
+          "id": "gahabooks"
+        }
       ],
-      "schedule": { "periods": [], "anchor": 0 },
-      "genres": ["romance"],
+      "schedule": {
+        "periods": [],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 1,
       "contentsState": "completed",
       "isPrint": true,
@@ -124,11 +218,26 @@
       "alias": "exonepick",
       "title": "구최애로부터 비밀을 사수하라!",
       "artists": [
-        { "name": "선마", "role": "scripter", "id": "sunma" },
-        { "name": "네치", "role": "painter", "id": "nechi" }
+        {
+          "name": "선마",
+          "role": "scripter",
+          "id": "sunma"
+        },
+        {
+          "name": "네치",
+          "role": "painter",
+          "id": "nechi"
+        }
       ],
-      "schedule": { "periods": ["THU"], "anchor": 0 },
-      "genres": ["romance"],
+      "schedule": {
+        "periods": [
+          "THU"
+        ],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 3,
       "contentsState": "scheduled",
       "isPrint": false,
@@ -142,9 +251,22 @@
       "id": 6170000663052288,
       "alias": "limit",
       "title": "신데렐라 리미트",
-      "artists": [{ "name": "깨알", "role": "writer", "id": "argok2009" }],
-      "schedule": { "periods": ["TUE"], "anchor": 0 },
-      "genres": ["romance"],
+      "artists": [
+        {
+          "name": "깨알",
+          "role": "writer",
+          "id": "argok2009"
+        }
+      ],
+      "schedule": {
+        "periods": [
+          "TUE"
+        ],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 4,
       "contentsState": "scheduled",
       "isPrint": false,
@@ -159,13 +281,34 @@
       "alias": "contract_wife",
       "title": "속도위반 대표님과 계약 아내 [연재]",
       "artists": [
-        { "name": "kkworld", "role": "painter", "id": "kkworld" },
-        { "name": "shibuciyuan", "role": "painter", "id": "shibuciyuan" },
-        { "name": "flower", "role": "original", "id": "flower" },
-        { "name": "스토리숲", "role": "publisher", "id": "storysoop" }
+        {
+          "name": "kkworld",
+          "role": "painter",
+          "id": "kkworld"
+        },
+        {
+          "name": "shibuciyuan",
+          "role": "painter",
+          "id": "shibuciyuan"
+        },
+        {
+          "name": "flower",
+          "role": "original",
+          "id": "flower"
+        },
+        {
+          "name": "스토리숲",
+          "role": "publisher",
+          "id": "storysoop"
+        }
       ],
-      "schedule": { "periods": [], "anchor": 0 },
-      "genres": ["romance"],
+      "schedule": {
+        "periods": [],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 16,
       "contentsState": "scheduled",
       "isPrint": true,
@@ -179,9 +322,22 @@
       "id": 4907714540535808,
       "alias": "story_of_anna",
       "title": "안나 이야기",
-      "artists": [{ "name": "김지효", "role": "writer", "id": "kim_ji_hyo" }],
-      "schedule": { "periods": ["MON"], "anchor": 0 },
-      "genres": ["romance"],
+      "artists": [
+        {
+          "name": "김지효",
+          "role": "writer",
+          "id": "kim_ji_hyo"
+        }
+      ],
+      "schedule": {
+        "periods": [
+          "MON"
+        ],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 29,
       "contentsState": "scheduled",
       "isPrint": false,
@@ -195,9 +351,22 @@
       "id": 272,
       "alias": "woori",
       "title": "우리사이느은",
-      "artists": [{ "name": "이연지", "role": "writer", "id": "leegreen" }],
-      "schedule": { "periods": ["WED"], "anchor": 0 },
-      "genres": ["romance"],
+      "artists": [
+        {
+          "name": "이연지",
+          "role": "writer",
+          "id": "leegreen"
+        }
+      ],
+      "schedule": {
+        "periods": [
+          "WED"
+        ],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 12,
       "contentsState": "completed",
       "isPrint": false,
@@ -211,9 +380,22 @@
       "id": 6694684605874176,
       "alias": "alliwantis",
       "title": "내가 원하는 건",
-      "artists": [{ "name": "정", "role": "writer", "id": "jung" }],
-      "schedule": { "periods": ["SAT"], "anchor": 0 },
-      "genres": ["romance"],
+      "artists": [
+        {
+          "name": "정",
+          "role": "writer",
+          "id": "jung"
+        }
+      ],
+      "schedule": {
+        "periods": [
+          "SAT"
+        ],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 60,
       "contentsState": "scheduled",
       "isPrint": false,
@@ -228,11 +410,26 @@
       "alias": "hard_to_say_love",
       "title": "사랑이라 하기엔 기분 나빠",
       "artists": [
-        { "name": "모구스", "role": "writer", "id": "mogusu" },
-        { "name": "레진코믹스", "role": "publisher", "id": "lezhincomics" }
+        {
+          "name": "모구스",
+          "role": "writer",
+          "id": "mogusu"
+        },
+        {
+          "name": "레진코믹스",
+          "role": "publisher",
+          "id": "lezhincomics"
+        }
       ],
-      "schedule": { "periods": ["FRI"], "anchor": 0 },
-      "genres": ["romance"],
+      "schedule": {
+        "periods": [
+          "FRI"
+        ],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 1,
       "contentsState": "scheduled",
       "isPrint": false,
@@ -247,11 +444,24 @@
       "alias": "heydragon",
       "title": "있잖아요 용님!",
       "artists": [
-        { "name": "영현", "role": "writer", "id": "younghyun" },
-        { "name": "키다리스튜디오", "role": "publisher", "id": "kidaristudio" }
+        {
+          "name": "영현",
+          "role": "writer",
+          "id": "younghyun"
+        },
+        {
+          "name": "키다리스튜디오",
+          "role": "publisher",
+          "id": "kidaristudio"
+        }
       ],
-      "schedule": { "periods": [], "anchor": 0 },
-      "genres": ["romance"],
+      "schedule": {
+        "periods": [],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 1,
       "contentsState": "completed",
       "isPrint": true,
@@ -266,11 +476,24 @@
       "alias": "between_30cm",
       "title": "우리 사이 30cm",
       "artists": [
-        { "name": "YUJU", "role": "writer", "id": "yuju" },
-        { "name": "재담미디어", "role": "publisher", "id": "jaedam" }
+        {
+          "name": "YUJU",
+          "role": "writer",
+          "id": "yuju"
+        },
+        {
+          "name": "재담미디어",
+          "role": "publisher",
+          "id": "jaedam"
+        }
       ],
-      "schedule": { "periods": [], "anchor": 0 },
-      "genres": ["romance"],
+      "schedule": {
+        "periods": [],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 9,
       "contentsState": "completed",
       "isPrint": true,
@@ -284,9 +507,22 @@
       "id": 18,
       "alias": "giveme_ur_heart",
       "title": "너의 HEART를 나에게 줄래?",
-      "artists": [{ "name": "비아이", "role": "writer", "id": "B_i" }],
-      "schedule": { "periods": ["THU"], "anchor": 0 },
-      "genres": ["romance"],
+      "artists": [
+        {
+          "name": "비아이",
+          "role": "writer",
+          "id": "B_i"
+        }
+      ],
+      "schedule": {
+        "periods": [
+          "THU"
+        ],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 10,
       "contentsState": "completed",
       "isPrint": false,
@@ -301,11 +537,26 @@
       "alias": "hayandere",
       "title": "하얀데레",
       "artists": [
-        { "name": "남별", "role": "scripter", "id": "southstar" },
-        { "name": "프릿슈", "role": "painter", "id": "refia" }
+        {
+          "name": "남별",
+          "role": "scripter",
+          "id": "southstar"
+        },
+        {
+          "name": "프릿슈",
+          "role": "painter",
+          "id": "refia"
+        }
       ],
-      "schedule": { "periods": ["SUN"], "anchor": 0 },
-      "genres": ["romance"],
+      "schedule": {
+        "periods": [
+          "SUN"
+        ],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 7,
       "contentsState": "completed",
       "isPrint": false,
@@ -320,16 +571,29 @@
       "alias": "genderis_man",
       "title": "젠더리스 남자에게 사랑받고 있습니다",
       "artists": [
-        { "name": "타메코우", "role": "writer", "id": "tamekou" },
-        { "name": "AK 코믹스", "role": "label", "id": "akcomics" },
+        {
+          "name": "타메코우",
+          "role": "writer",
+          "id": "tamekou"
+        },
+        {
+          "name": "AK 코믹스",
+          "role": "label",
+          "id": "akcomics"
+        },
         {
           "name": "AK 커뮤니케이션즈",
           "role": "publisher",
           "id": "akcommunications"
         }
       ],
-      "schedule": { "periods": [], "anchor": 0 },
-      "genres": ["romance"],
+      "schedule": {
+        "periods": [],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 1,
       "contentsState": "scheduled",
       "isPrint": true,
@@ -344,11 +608,24 @@
       "alias": "human_pervert_rd",
       "title": "어차피 인간은 다 변태야 [개정판]",
       "artists": [
-        { "name": "장미", "role": "writer", "id": "jangmi" },
-        { "name": "위즈덤하우스", "role": "publisher", "id": "wisdomhouse" }
+        {
+          "name": "장미",
+          "role": "writer",
+          "id": "jangmi"
+        },
+        {
+          "name": "위즈덤하우스",
+          "role": "publisher",
+          "id": "wisdomhouse"
+        }
       ],
-      "schedule": { "periods": [], "anchor": 0 },
-      "genres": ["romance"],
+      "schedule": {
+        "periods": [],
+        "anchor": 0
+      },
+      "genres": [
+        "romance"
+      ],
       "freedEpisodeSize": 2,
       "contentsState": "completed",
       "isPrint": true,
