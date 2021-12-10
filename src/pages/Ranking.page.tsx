@@ -1,13 +1,10 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import { useGetComicByPageQuery } from '../services/comic';
 import Loader from '../components/Loader.component';
-// import useIntersect from '../hooks/useIntersect.hooks';
 import ComicItemList from '../components/ComicItemList.component';
 import styled, { createGlobalStyle } from 'styled-components';
 import { useAppSelector, useAppDispatch } from '../hooks/hooks';
 import { increment } from '../features/comic/comicSlice';
-
-// import Counter from '../components/Counter.component';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -45,22 +42,19 @@ const Ranking = (): ReactElement => {
   const dispatch = useAppDispatch();
 
   const [comics, setComics] = useState([]);
-  const [isLoaded, setIsLoaded] = useState(false);
   const { data, error, isLoading, isFetching } = useGetComicByPageQuery(page);
 
   // io
   const [target, setTarget] = useState(null);
 
   const getMoreItem = async () => {
-    await new Promise(resolve => setTimeout(resolve, 3000));
+    await new Promise(resolve => setTimeout(resolve, 1500));
     dispatch(increment());
   };
 
-  const onIntersect = async ([entry], observer) => {
+  const onIntersect = async ([entry]) => {
     if (entry.isIntersecting && !isFetching) {
-      observer.unobserve(entry.target);
       await getMoreItem();
-      observer.observe(entry.target);
     }
   };
 
@@ -89,7 +83,7 @@ const Ranking = (): ReactElement => {
         <section id="Ranking">
           <ComicItemList comics={comics} />
         </section>
-        {page < 5 && (
+        {data.hasNext && (
           <div ref={setTarget} className="Target-Element">
             {!isFetching && <Loader />}
           </div>
