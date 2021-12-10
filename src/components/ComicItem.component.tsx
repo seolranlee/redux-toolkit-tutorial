@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import { ComicRankItem } from '../services/comic';
+import shortId from 'shortid';
 
 export interface ComicItemProps {
   comic: ComicRankItem;
@@ -22,7 +23,7 @@ const ComicItem = (props: PropsWithChildren<ComicItemProps>) => {
             artist.role === 'scripter'
           ) {
             return (
-              <p className="lzComic__meta">
+              <p key={shortId.generate()} className="lzComic__meta">
                 <span className="lzComic__artist">
                   {artist.role} {artist.name}
                 </span>

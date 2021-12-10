@@ -1,10 +1,12 @@
-import React, { ReactElement, useEffect, useState } from 'react';
+import React, { ReactElement, useEffect, useState, useRef } from 'react';
 import { useGetComicByPageQuery } from '../services/comic';
 import Loader from '../components/Loader.component';
+// import useIntersect from '../hooks/useIntersect.hooks';
 import ComicItemList from '../components/ComicItemList.component';
 import styled, { createGlobalStyle } from 'styled-components';
 import { useAppSelector, useAppDispatch } from '../hooks/hooks';
 import { increment } from '../features/comic/comicSlice';
+import { ComicRankItem } from '../services/comic';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -41,33 +43,33 @@ const Ranking = (): ReactElement => {
   const page = useAppSelector(state => state.comic.page);
   const dispatch = useAppDispatch();
 
-  const [comics, setComics] = useState([]);
+  const [comics, setComics] = useState<ComicRankItem[]>([]);
   const { data, error, isLoading, isFetching } = useGetComicByPageQuery(page);
 
   // io
-  const [target, setTarget] = useState(null);
+  const target = useRef<HTMLDivElement>(null);
 
   const getMoreItem = async () => {
     await new Promise(resolve => setTimeout(resolve, 1500));
     dispatch(increment());
   };
 
-  const onIntersect = async ([entry]) => {
+  const onIntersect = async ([entry]: IntersectionObserverEntry[]) => {
     if (entry.isIntersecting && !isFetching) {
       await getMoreItem();
     }
   };
 
   useEffect(() => {
-    let observer;
-    if (target) {
+    let observer: IntersectionObserver;
+    if (target.current) {
       observer = new IntersectionObserver(onIntersect, {
         threshold: 0.4,
       });
-      observer.observe(target);
+      observer.observe(target.current as Element);
     }
     return () => observer && observer.disconnect();
-  }, [target]);
+  }, [target.current]);
 
   useEffect(() => {
     if (data) setComics(comics => comics.concat(data.data));
@@ -83,8 +85,8 @@ const Ranking = (): ReactElement => {
         <section id="Ranking">
           <ComicItemList comics={comics} />
         </section>
-        {data.hasNext && (
-          <div ref={setTarget} className="Target-Element">
+        {data?.hasNext && (
+          <div ref={target} className="Target-Element">
             {!isFetching && <Loader />}
           </div>
         )}
