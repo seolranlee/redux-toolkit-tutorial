@@ -1,12 +1,10 @@
-import React, { ReactElement, useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useGetComicByPageQuery } from '../services/comic';
 import Loader from '../components/Loader.component';
-// import useIntersect from '../hooks/useIntersect.hooks';
 import ComicItemList from '../components/ComicItemList.component';
 import styled, { createGlobalStyle } from 'styled-components';
-import { useAppSelector, useAppDispatch } from '../hooks/hooks';
-import { increment } from '../features/comic/comicSlice';
 import { ComicRankItem } from '../services/comic';
+import Target from '../components/Target.component';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -28,21 +26,10 @@ const AppWrap = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
-
-  .Target-Element {
-    width: 100vw;
-    height: 140px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-  }
 `;
 
-const Ranking = (): ReactElement => {
-  const page = useAppSelector(state => state.comic.page);
-  const dispatch = useAppDispatch();
-
+const Ranking = () => {
+  const [page, setPage] = useState(1);
   const [comics, setComics] = useState<ComicRankItem[]>([]);
   const { data, error, isLoading, isFetching } = useGetComicByPageQuery(page);
 
@@ -51,7 +38,7 @@ const Ranking = (): ReactElement => {
 
   const getMoreItem = async () => {
     await new Promise(resolve => setTimeout(resolve, 1500));
-    dispatch(increment());
+    setPage(page => page + 1);
   };
 
   const onIntersect = async ([entry]: IntersectionObserverEntry[]) => {
@@ -80,17 +67,21 @@ const Ranking = (): ReactElement => {
 
   return (
     <>
-      <GlobalStyle />
-      <AppWrap>
-        <section id="Ranking">
-          <ComicItemList comics={comics} />
-        </section>
-        {data?.hasNext && (
-          <div ref={target} className="Target-Element">
-            {!isFetching && <Loader />}
-          </div>
-        )}
-      </AppWrap>
+      {data && (
+        <>
+          <GlobalStyle />
+          <AppWrap>
+            <section id="Ranking">
+              <ComicItemList comics={comics} />
+            </section>
+            <Target
+              hasNext={data.hasNext}
+              target={target}
+              isFetching={isFetching}
+            />
+          </AppWrap>
+        </>
+      )}
     </>
   );
 };
