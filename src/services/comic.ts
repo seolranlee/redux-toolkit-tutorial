@@ -54,11 +54,9 @@ export const comicApi = createApi({
   }),
   endpoints: builder => ({
     getComicByPage: builder.query<ComicRankApiSuccessResponse, number>({
-      query: page => `comics/page_${page}.json`,
+      query: page => `comics/romance/page_${page}.json`,
     }),
   }),
 });
 
-// Export hooks for usage in functional components, which are
-// auto-generated based on the defined endpoints
 export const { useGetComicByPageQuery } = comicApi;

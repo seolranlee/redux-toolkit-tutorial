@@ -16,8 +16,7 @@
       "schedule": {
         "periods": [
           "SUN"
-        ],
-        "anchor": 0
+        ]
       },
       "genres": [
         "romance"
@@ -55,8 +54,7 @@
       "schedule": {
         "periods": [
           "TUE"
-        ],
-        "anchor": 0
+        ]
       },
       "genres": [
         "romance"
@@ -84,8 +82,7 @@
       "schedule": {
         "periods": [
           "SUN"
-        ],
-        "anchor": 0
+        ]
       },
       "genres": [
         "romance"
@@ -118,8 +115,7 @@
       "schedule": {
         "periods": [
           "WED"
-        ],
-        "anchor": 0
+        ]
       },
       "genres": [
         "romance"
@@ -152,8 +148,7 @@
       "schedule": {
         "periods": [
           "TUE"
-        ],
-        "anchor": 0
+        ]
       },
       "genres": [
         "romance"
@@ -181,8 +176,7 @@
       "schedule": {
         "periods": [
           "TUE"
-        ],
-        "anchor": 0
+        ]
       },
       "genres": [
         "romance"
@@ -210,8 +204,7 @@
       "schedule": {
         "periods": [
           "MON"
-        ],
-        "anchor": 0
+        ]
       },
       "genres": [
         "romance"
@@ -247,8 +240,7 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
@@ -276,8 +268,7 @@
       "schedule": {
         "periods": [
           "SUN"
-        ],
-        "anchor": 0
+        ]
       },
       "genres": [
         "romance"
@@ -313,8 +304,7 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
@@ -352,8 +342,7 @@
       "schedule": {
         "periods": [
           "TUE"
-        ],
-        "anchor": 0
+        ]
       },
       "genres": [
         "romance"
@@ -389,8 +378,7 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
@@ -421,8 +409,7 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
@@ -463,14 +450,13 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
       ],
       "freedEpisodeSize": 3,
-      "contentsState": "scheduled",
+      "contentsState": "completed",
       "isPrint": true,
       "currentRank": 94,
       "previousRank": 58,
@@ -500,14 +486,13 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
       ],
       "freedEpisodeSize": 21,
-      "contentsState": "scheduled",
+      "contentsState": "completed",
       "isPrint": true,
       "currentRank": 95,
       "previousRank": 273,
@@ -532,14 +517,13 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
       ],
       "freedEpisodeSize": 4,
-      "contentsState": "scheduled",
+      "contentsState": "completed",
       "isPrint": true,
       "currentRank": 96,
       "previousRank": 279,
@@ -559,8 +543,7 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
@@ -591,14 +574,13 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
       ],
       "freedEpisodeSize": 4,
-      "contentsState": "scheduled",
+      "contentsState": "completed",
       "isPrint": true,
       "currentRank": 98,
       "previousRank": 74,
@@ -628,14 +610,13 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
       ],
       "freedEpisodeSize": 3,
-      "contentsState": "scheduled",
+      "contentsState": "completed",
       "isPrint": true,
       "currentRank": 99,
       "previousRank": 94,

@@ -24,14 +24,13 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
       ],
       "freedEpisodeSize": 2,
-      "contentsState": "scheduled",
+      "contentsState": "completed",
       "isPrint": false,
       "currentRank": 61,
       "previousRank": 40,
@@ -56,14 +55,13 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
       ],
       "freedEpisodeSize": 2,
-      "contentsState": "scheduled",
+      "contentsState": "completed",
       "isPrint": true,
       "currentRank": 62,
       "previousRank": 251,
@@ -98,8 +96,7 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
@@ -130,14 +127,13 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
       ],
       "freedEpisodeSize": 3,
-      "contentsState": "scheduled",
+      "contentsState": "completed",
       "isPrint": true,
       "currentRank": 64,
       "previousRank": 329,
@@ -162,14 +158,13 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
       ],
       "freedEpisodeSize": 3,
-      "contentsState": "scheduled",
+      "contentsState": "completed",
       "isPrint": true,
       "currentRank": 65,
       "previousRank": 334,
@@ -194,14 +189,13 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
       ],
       "freedEpisodeSize": 2,
-      "contentsState": "scheduled",
+      "contentsState": "completed",
       "isPrint": true,
       "currentRank": 66,
       "previousRank": 445,
@@ -236,14 +230,13 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
       ],
       "freedEpisodeSize": 2,
-      "contentsState": "scheduled",
+      "contentsState": "completed",
       "isPrint": true,
       "currentRank": 67,
       "previousRank": 44,
@@ -265,8 +258,7 @@
       "schedule": {
         "periods": [
           "SAT"
-        ],
-        "anchor": 0
+        ]
       },
       "genres": [
         "romance"
@@ -307,8 +299,7 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
@@ -344,8 +335,7 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
@@ -381,8 +371,7 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
@@ -413,14 +402,13 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
       ],
       "freedEpisodeSize": 10,
-      "contentsState": "scheduled",
+      "contentsState": "completed",
       "isPrint": true,
       "currentRank": 72,
       "previousRank": 237,
@@ -445,8 +433,7 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
@@ -477,8 +464,7 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
@@ -509,8 +495,7 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
@@ -546,8 +531,7 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
@@ -583,8 +567,7 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
@@ -620,8 +603,7 @@
         }
       ],
       "schedule": {
-        "periods": [],
-        "anchor": 0
+        "periods": []
       },
       "genres": [
         "romance"
@@ -649,8 +631,7 @@
       "schedule": {
         "periods": [
           "THU"
-        ],
-        "anchor": 0
+        ]
       },
       "genres": [
         "romance"
