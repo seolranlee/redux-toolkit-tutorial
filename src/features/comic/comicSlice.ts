@@ -5,12 +5,15 @@ import { ComicRankItem } from '../../services/comic';
 interface ComicState {
   page: number;
   comics: ComicRankItem[];
+  filters: string[];
 }
 
 // Define the initial state using that type
 const initialState: ComicState = {
   page: 1,
   comics: [],
+  // filter배열
+  filters: [],
 };
 
 export const comicSlice = createSlice({
@@ -20,14 +23,42 @@ export const comicSlice = createSlice({
     addPage: state => {
       state.page += 1;
     },
-    // Use the PayloadAction type to declare the contents of `action.payload`
     addComic: (state, action: PayloadAction<ComicRankItem[]>) => {
-      console.log('addComic');
-      state.comics = state.comics.concat(action.payload);
+      if (state.filters.includes('free'))
+        state.comics = state.comics
+          .concat(action.payload)
+          .filter((comic: ComicRankItem) => comic.freedEpisodeSize >= 10);
+      else state.comics = state.comics.concat(action.payload);
     },
+
+    setFilter: state => {
+      state.filters = state.filters.concat(['free']);
+      if (state.filters.includes('free'))
+        state.comics = state.comics.filter(
+          (comic: ComicRankItem) => comic.freedEpisodeSize >= 10
+        );
+    },
+    // setFilter: state => {
+    //   state.filters = state.filters.concat(['free']);
+    //   console.log(state.filters);
+    //   if (state.filters.includes('free'))
+    //     state.comics = state.comics.filter(
+    //       (comic: ComicRankItem) => comic.freedEpisodeSize >= 10
+    //     );
+    // },
+    // filterComicFree: state => {
+    //   state.comics = state.comics.filter(
+    //     (comic: ComicRankItem) => comic.freedEpisodeSize >= 10
+    //   );
+    // },
+    // filterComicState: state => {
+    //   state.comics = state.comics.filter(
+    //     (comic: ComicRankItem) => comic.contentsState === 'scheduled'
+    //   );
+    // },
   },
 });
 
-export const { addPage, addComic } = comicSlice.actions;
+export const { addPage, addComic, setFilter } = comicSlice.actions;
 
 export default comicSlice.reducer;

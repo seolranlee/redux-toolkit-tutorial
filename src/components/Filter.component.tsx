@@ -1,7 +1,9 @@
-import React from 'react';
-import Loader from '../components/Loader.component';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setFilter } from '../features/comic/comicSlice';
 
 import styled from 'styled-components';
+import { ComicRankItem } from '../services/comic';
 
 const TargetWrap = styled.div`
   width: 100vw;
@@ -12,23 +14,16 @@ const TargetWrap = styled.div`
   align-items: center;
 `;
 
-interface TargetProps {
-  hasNext: boolean;
-  target: React.RefObject<HTMLDivElement>;
-  isFetching: boolean;
-}
+const Filter = () => {
+  const dispatch = useDispatch();
+  // const [, setFilter] = useState<any>([]);
 
-const Filter = (props: TargetProps) => {
-  const { hasNext, target, isFetching } = props;
+  // const addFilter = (label: string) => {
+  //   setFilter(filter.push(label));
+  // };
   return (
     <>
-      {hasNext && (
-        <TargetWrap>
-          <div ref={target} className="Target-Element">
-            {!isFetching && <Loader />}
-          </div>
-        </TargetWrap>
-      )}
+      <button onClick={() => dispatch(setFilter())}>무료회차 10개 이상</button>
     </>
   );
 };

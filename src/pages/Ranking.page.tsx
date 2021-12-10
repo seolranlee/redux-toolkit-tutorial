@@ -8,6 +8,7 @@ import Target from '../components/Target.component';
 import { useSelector, useDispatch } from 'react-redux';
 import { addPage, addComic } from '../features/comic/comicSlice';
 import { RootState } from '../store';
+import Filter from '../components/Filter.component';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -64,7 +65,6 @@ const Ranking = () => {
   }, [target.current]);
 
   useEffect(() => {
-    console.log(data);
     if (data) dispatch(addComic(data.data));
   }, [data]);
 
@@ -79,6 +79,7 @@ const Ranking = () => {
           <GlobalStyle />
           <AppWrap>
             <section id="Ranking">
+              <Filter />
               <ComicItemList
                 comics={comics.filter(
                   (comic: ComicRankItem) => comic.freedEpisodeSize >= 3
