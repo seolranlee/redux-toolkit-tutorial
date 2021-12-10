@@ -5,6 +5,9 @@ import ComicItemList from '../components/ComicItemList.component';
 import styled, { createGlobalStyle } from 'styled-components';
 import { ComicRankItem } from '../services/comic';
 import Target from '../components/Target.component';
+import { useSelector, useDispatch } from 'react-redux';
+import { addPage, addComic } from '../features/comic/comicSlice';
+import { RootState } from '../store';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -29,8 +32,10 @@ const AppWrap = styled.div`
 `;
 
 const Ranking = () => {
-  const [page, setPage] = useState(1);
-  const [comics, setComics] = useState<ComicRankItem[]>([]);
+  const page = useSelector((state: RootState) => state.comic.page);
+  const comics = useSelector((state: RootState) => state.comic.comics);
+  const dispatch = useDispatch();
+
   const { data, error, isLoading, isFetching } = useGetComicByPageQuery(page);
 
   // io
@@ -38,7 +43,7 @@ const Ranking = () => {
 
   const getMoreItem = async () => {
     await new Promise(resolve => setTimeout(resolve, 1500));
-    setPage(page => page + 1);
+    dispatch(addPage());
   };
 
   const onIntersect = async ([entry]: IntersectionObserverEntry[]) => {
@@ -59,7 +64,8 @@ const Ranking = () => {
   }, [target.current]);
 
   useEffect(() => {
-    if (data) setComics(comics => comics.concat(data.data));
+    console.log(data);
+    if (data) dispatch(addComic(data.data));
   }, [data]);
 
   if (isLoading) return <Loader />;
@@ -67,12 +73,17 @@ const Ranking = () => {
 
   return (
     <>
+      {/* 연재중, 완결, 무료회차 3개 이상 */}
       {data && (
         <>
           <GlobalStyle />
           <AppWrap>
             <section id="Ranking">
-              <ComicItemList comics={comics} />
+              <ComicItemList
+                comics={comics.filter(
+                  (comic: ComicRankItem) => comic.freedEpisodeSize >= 3
+                )}
+              />
             </section>
             <Target
               hasNext={data.hasNext}
