@@ -1,7 +1,7 @@
 import React, { PropsWithChildren } from 'react';
 import { ComicRankItem } from '../services/comic';
 import shortId from 'shortid';
-
+import { DAY } from '../enums/enums';
 export interface ComicItemProps {
   comic: ComicRankItem;
   // ref: any;
@@ -43,7 +43,7 @@ const ComicItem = (props: PropsWithChildren<ComicItemProps>) => {
         <p className="lzComic__free">{comic.freedEpisodeSize}화 무료</p>
         <p className="lzComic__state">
           {comic.contentsState === 'scheduled'
-            ? `매주 ${comic.schedule.periods[0]}요일 연재`
+            ? `매주 ${DAY[comic.schedule.periods[0]]}요일 연재`
             : '완결'}
         </p>
       </div>

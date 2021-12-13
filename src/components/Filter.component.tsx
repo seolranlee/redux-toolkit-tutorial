@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setFilter } from '../features/comic/comicSlice';
+// import { setFilter } from '../features/comic/comicSlice';
 
 import styled from 'styled-components';
 import { ComicRankItem } from '../services/comic';
@@ -23,7 +23,7 @@ const Filter = () => {
   // };
   return (
     <>
-      <button onClick={() => dispatch(setFilter())}>무료회차 10개 이상</button>
+      {/* <button onClick={() => dispatch(setFilter())}>무료회차 10개 이상</button> */}
     </>
   );
 };
