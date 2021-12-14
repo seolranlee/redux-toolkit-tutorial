@@ -1,25 +1,19 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ComicRankItem } from '../../services/comic';
-import { filters } from '../../models/filter';
-// Define a type for the slice state
-interface FilterItem {
-  label: string;
-  key: string;
-  checked: boolean;
-  condition: (comic: ComicRankItem) => boolean;
-}
 interface ComicState {
   page: number;
   comics: ComicRankItem[];
-  filters: FilterItem[];
+  filters: string[];
+  filteredComics: ComicRankItem[];
 }
 
 // Define the initial state using that type
 const initialState: ComicState = {
   page: 1,
   comics: [],
+  filters: [],
+  filteredComics: [],
   // filter배열
-  filters,
 };
 
 export const comicSlice = createSlice({
@@ -31,49 +25,25 @@ export const comicSlice = createSlice({
     },
     addComic: (state, action: PayloadAction<ComicRankItem[]>) => {
       state.comics = state.comics.concat(action.payload);
-
-      filters.map(filter => {
-        if (filter.checked) {
-          state.comics = state.comics.filter(filter.condition);
-        } else {
-          return false;
-        }
-      });
-      // // 연재중
-      // if (state.filters.includes('free')) {
-      //   state.comics = state.comics.filter(
-      //     (comic: ComicRankItem) => comic.freedEpisodeSize >= 3
-      //   );
-      // }
-
-      // // 무료회차 3화 이상
-      // if (state.filters.includes('free')) {
-      //   state.comics = state.comics.filter(
-      //     (comic: ComicRankItem) => comic.freedEpisodeSize >= 3
-      //   );
-      // }
     },
-    // setFilter: state => {
-    //   state.filters = state.filters.concat(['free']);
-    //   console.log(state.filters);
-    //   if (state.filters.includes('free'))
-    //     state.comics = state.comics.filter(
-    //       (comic: ComicRankItem) => comic.freedEpisodeSize >= 10
-    //     );
-    // },
-    // filterComicFree: state => {
-    //   state.comics = state.comics.filter(
-    //     (comic: ComicRankItem) => comic.freedEpisodeSize >= 10
-    //   );
-    // },
-    // filterComicState: state => {
-    //   state.comics = state.comics.filter(
-    //     (comic: ComicRankItem) => comic.contentsState === 'scheduled'
-    //   );
-    // },
+    filterComics: state => {
+      if (state.filters.includes('free')) {
+        state.filteredComics = state.comics.filter(
+          comic => comic.freedEpisodeSize >= 10
+        );
+      } else {
+        state.filteredComics = state.comics;
+      }
+    },
+    setFilters: state => {
+      if (state.filters.includes('free'))
+        state.filters = state.filters.filter(filter => filter !== 'free');
+      else state.filters.push('free');
+    },
   },
 });
 
-export const { addPage, addComic } = comicSlice.actions;
+export const { addPage, addComic, filterComics, setFilters } =
+  comicSlice.actions;
 
 export default comicSlice.reducer;

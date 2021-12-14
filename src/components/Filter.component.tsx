@@ -1,29 +1,22 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-// import { setFilter } from '../features/comic/comicSlice';
-
-import styled from 'styled-components';
-import { ComicRankItem } from '../services/comic';
-
-const TargetWrap = styled.div`
-  width: 100vw;
-  height: 140px;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-`;
+import React from 'react';
+import { RootState } from '../store';
+import { useSelector, useDispatch } from 'react-redux';
+import { setFilters, filterComics } from '../features/comic/comicSlice';
 
 const Filter = () => {
+  const filters = useSelector((state: RootState) => state.comic.filters);
   const dispatch = useDispatch();
-  // const [, setFilter] = useState<any>([]);
 
-  // const addFilter = (label: string) => {
-  //   setFilter(filter.push(label));
-  // };
   return (
     <>
-      {/* <button onClick={() => dispatch(setFilter())}>무료회차 10개 이상</button> */}
+      <button
+        onClick={() => {
+          dispatch(setFilters());
+          dispatch(filterComics());
+        }}
+      >
+        {filters.includes('free') ? 'on' : 'off'}
+      </button>
     </>
   );
 };
