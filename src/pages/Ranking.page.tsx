@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useGetComicByPageQuery } from '../services/comic';
 import Loader from '../components/Loader.component';
 import ComicItemList from '../components/ComicItemList.component';
 import styled, { createGlobalStyle } from 'styled-components';
 import Target from '../components/Target.component';
 import { useSelector, useDispatch } from 'react-redux';
-import { addPage, addComic } from '../features/comic/comicSlice';
+import { addComic } from '../features/comic/comicSlice';
 import { RootState } from '../store';
 import FilterList from '../components/Filter.component';
 import { filteredComics } from '../utils/filter.util';
@@ -33,9 +33,8 @@ const AppWrap = styled.div`
 `;
 
 const Ranking = () => {
-  const { page, comics, filters } = useSelector(
-    (state: RootState) => state.comic
-  );
+  const [page, setPage] = useState(1);
+  const { comics, filters } = useSelector((state: RootState) => state.comic);
   const dispatch = useDispatch();
   const { data, error, isLoading, isFetching } = useGetComicByPageQuery(page);
 
@@ -43,8 +42,8 @@ const Ranking = () => {
   const target = useRef<HTMLDivElement>(null);
 
   const getMoreItem = async () => {
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    dispatch(addPage());
+    // await new Promise(resolve => setTimeout(resolve, 1500));
+    setPage(prev => prev + 1);
   };
 
   const onIntersect = async ([entry]: IntersectionObserverEntry[]) => {
@@ -56,9 +55,7 @@ const Ranking = () => {
   useEffect(() => {
     let observer: IntersectionObserver;
     if (target.current) {
-      observer = new IntersectionObserver(onIntersect, {
-        threshold: 0.4,
-      });
+      observer = new IntersectionObserver(onIntersect);
       observer.observe(target.current as Element);
     }
     return () => observer && observer.disconnect();
