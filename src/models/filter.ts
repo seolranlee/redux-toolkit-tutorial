@@ -1,25 +1,20 @@
-import { ComicRankItem } from '../services/comic';
-
 export const filters = [
   {
     label: '연재 중',
-    id: 'scheduled',
-    key: 'contentsState',
-    isChecked: false,
-    condition: (comic: ComicRankItem) => comic.contentsState === 'scheduled',
+    id: 'contentsState',
+    key: 'scheduled',
+    isSelected: false,
   },
   {
     label: '완결',
-    id: 'completed',
-    key: 'contentsState',
-    isChecked: false,
-    condition: (comic: ComicRankItem) => comic.contentsState === 'completed',
+    id: 'contentsState',
+    key: 'completed',
+    isSelected: false,
   },
   {
     label: '무료회차 3개 이상',
-    id: 'free',
+    id: 'freedEpisodeSize',
     key: 'freedEpisodeSize',
-    isChecked: true,
-    condition: (comic: ComicRankItem) => comic.freedEpisodeSize >= 10,
+    isSelected: false,
   },
 ];

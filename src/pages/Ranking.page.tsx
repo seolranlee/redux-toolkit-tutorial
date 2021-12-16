@@ -5,9 +5,10 @@ import ComicItemList from '../components/ComicItemList.component';
 import styled, { createGlobalStyle } from 'styled-components';
 import Target from '../components/Target.component';
 import { useSelector, useDispatch } from 'react-redux';
-import { addPage, addComic, filterComics } from '../features/comic/comicSlice';
+import { addPage, addComic } from '../features/comic/comicSlice';
 import { RootState } from '../store';
 import Filter from '../components/Filter.component';
+import { filteredComics } from '../utils/filter.util';
 
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
@@ -32,11 +33,8 @@ const AppWrap = styled.div`
 `;
 
 const Ranking = () => {
-  const page = useSelector((state: RootState) => state.comic.page);
-  const comics = useSelector((state: RootState) => state.comic.comics);
-  const filters = useSelector((state: RootState) => state.comic.filters);
-  const filteredComics = useSelector(
-    (state: RootState) => state.comic.filteredComics
+  const { page, comics, filters } = useSelector(
+    (state: RootState) => state.comic
   );
   const dispatch = useDispatch();
   const { data, error, isLoading, isFetching } = useGetComicByPageQuery(page);
@@ -69,7 +67,6 @@ const Ranking = () => {
   useEffect(() => {
     if (data) {
       dispatch(addComic(data.data));
-      dispatch(filterComics());
     }
   }, [data]);
 
@@ -85,9 +82,7 @@ const Ranking = () => {
           <AppWrap>
             <section id="Ranking">
               <Filter />
-              <ComicItemList
-                comics={filters.includes('free') ? filteredComics : comics}
-              />
+              <ComicItemList comics={filteredComics(filters, comics)} />
             </section>
             <Target
               hasNext={data.hasNext}

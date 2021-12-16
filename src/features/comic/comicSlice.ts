@@ -1,9 +1,16 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ComicRankItem } from '../../services/comic';
+import { filters } from '../../models/filter';
+export interface Filter {
+  label: string;
+  id: string;
+  key: string;
+  isSelected: boolean;
+}
 interface ComicState {
   page: number;
   comics: ComicRankItem[];
-  filters: string[];
+  filters: Filter[];
   filteredComics: ComicRankItem[];
 }
 
@@ -11,7 +18,7 @@ interface ComicState {
 const initialState: ComicState = {
   page: 1,
   comics: [],
-  filters: [],
+  filters,
   filteredComics: [],
   // filter배열
 };
@@ -26,24 +33,22 @@ export const comicSlice = createSlice({
     addComic: (state, action: PayloadAction<ComicRankItem[]>) => {
       state.comics = state.comics.concat(action.payload);
     },
-    filterComics: state => {
-      if (state.filters.includes('free')) {
-        state.filteredComics = state.comics.filter(
-          comic => comic.freedEpisodeSize >= 10
-        );
-      } else {
-        state.filteredComics = state.comics;
-      }
-    },
-    setFilters: state => {
-      if (state.filters.includes('free'))
-        state.filters = state.filters.filter(filter => filter !== 'free');
-      else state.filters.push('free');
+    setFilter: (state, action: PayloadAction<Filter>) => {
+      state.filters.map(filter => {
+        if (action.payload.label === filter.label) {
+          filter.isSelected = !filter.isSelected;
+        }
+        if (action.payload.key === 'scheduled') {
+          if (filter.key === 'completed') filter.isSelected = false;
+        }
+        if (action.payload.key === 'completed') {
+          if (filter.key === 'scheduled') filter.isSelected = false;
+        }
+      });
     },
   },
 });
 
-export const { addPage, addComic, filterComics, setFilters } =
-  comicSlice.actions;
+export const { addPage, addComic, setFilter } = comicSlice.actions;
 
 export default comicSlice.reducer;
