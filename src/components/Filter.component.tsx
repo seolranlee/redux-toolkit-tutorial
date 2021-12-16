@@ -1,12 +1,15 @@
-import React from 'react';
-import { RootState } from '../store';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { PropsWithChildren } from 'react';
+import { useDispatch } from 'react-redux';
 import { setFilter } from '../features/comic/comicSlice';
+import { Filter } from '../features/comic/comicSlice';
 
-const Filter = () => {
-  const filters = useSelector((state: RootState) => state.comic.filters);
+interface FilterProps {
+  filters: Filter[];
+}
+
+const FilterList = (props: PropsWithChildren<FilterProps>) => {
   const dispatch = useDispatch();
-
+  const { filters } = props;
   return (
     <div>
       {filters.map(filter => (
@@ -18,4 +21,4 @@ const Filter = () => {
   );
 };
 
-export default Filter;
+export default FilterList;

@@ -3,7 +3,6 @@ import { ComicRankItem } from '../../services/comic';
 import { filters } from '../../models/filter';
 export interface Filter {
   label: string;
-  id: string;
   key: string;
   isSelected: boolean;
 }
@@ -11,7 +10,6 @@ interface ComicState {
   page: number;
   comics: ComicRankItem[];
   filters: Filter[];
-  filteredComics: ComicRankItem[];
 }
 
 // Define the initial state using that type
@@ -19,8 +17,6 @@ const initialState: ComicState = {
   page: 1,
   comics: [],
   filters,
-  filteredComics: [],
-  // filter배열
 };
 
 export const comicSlice = createSlice({

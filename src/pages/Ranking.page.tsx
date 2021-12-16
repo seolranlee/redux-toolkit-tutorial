@@ -7,7 +7,7 @@ import Target from '../components/Target.component';
 import { useSelector, useDispatch } from 'react-redux';
 import { addPage, addComic } from '../features/comic/comicSlice';
 import { RootState } from '../store';
-import Filter from '../components/Filter.component';
+import FilterList from '../components/Filter.component';
 import { filteredComics } from '../utils/filter.util';
 
 const GlobalStyle = createGlobalStyle`
@@ -81,7 +81,7 @@ const Ranking = () => {
           <GlobalStyle />
           <AppWrap>
             <section id="Ranking">
-              <Filter />
+              <FilterList filters={filters} />
               <ComicItemList comics={filteredComics(filters, comics)} />
             </section>
             <Target
