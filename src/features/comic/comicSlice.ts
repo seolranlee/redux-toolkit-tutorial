@@ -7,14 +7,12 @@ export interface Filter {
   isSelected: boolean;
 }
 interface ComicState {
-  page: number;
   comics: ComicRankItem[];
   filters: Filter[];
 }
 
 // Define the initial state using that type
 const initialState: ComicState = {
-  page: 1,
   comics: [],
   filters,
 };
@@ -23,9 +21,6 @@ export const comicSlice = createSlice({
   name: 'comic',
   initialState,
   reducers: {
-    addPage: state => {
-      state.page += 1;
-    },
     addComic: (state, action: PayloadAction<ComicRankItem[]>) => {
       state.comics = state.comics.concat(action.payload);
     },
@@ -45,6 +40,6 @@ export const comicSlice = createSlice({
   },
 });
 
-export const { addPage, addComic, setFilter } = comicSlice.actions;
+export const { addComic, setFilter } = comicSlice.actions;
 
 export default comicSlice.reducer;
